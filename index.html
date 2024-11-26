@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LlamaCoder Helper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script defer src="../src/popup.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #codeInput {
+        width: 90%;
+        min-height: 150px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background: #2d2d2d;
+        color: #f8f8f2;
+        font-family: monospace;
+        overflow: auto;
+      }
+      button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      #output {
+        margin-top: 10px;
+        white-space: pre-wrap;
+        background: #f8f8f8;
+        padding: 10px;
+        width: 90%;
+        border: 1px solid #ccc;
+      }
+      #apiKeySection {
+        margin-bottom: 20px;
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LlamaCoder</h1>
+    <div id="apiKeySection">
+      <label for="apiKey">API Key:</label>
+      <input type="password" id="apiKey" placeholder="Enter API Key" />
+      <button id="saveApiKey">Save</button>
+    </div>
+    <pre>
+    <code id="codeInput" class="language-javascript" contenteditable="true" style="white-space: pre-wrap;"></code>
+  </pre>
+    <button id="getSuggestion">Get Suggestion</button>
+    <p id="output"></p>
+  </body>
+</html>
